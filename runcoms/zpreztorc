@@ -53,6 +53,9 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
 
+# Allow the zsh prompt context to be shown.
+#zstyle ':prezto:module:editor' ps-context 'yes'
+
 #
 # Git
 #
@@ -152,6 +155,9 @@ zstyle ':prezto:module:syntax-highlighting' styles \
 
 # Set the tab title format.
 # zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
+
+# Set the terminal multiplexer title format.
+# zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
 
 #
 # Tmux
