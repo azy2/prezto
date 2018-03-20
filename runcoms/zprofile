@@ -42,7 +42,10 @@ path=(
     /home/ben/opt/cross/bin
     /usr/local/{bin,sbin}
     /opt/JetBrains/Toolbox/bin
-    /home/ben/bin/
+    /home/ben/bin
+    /home/ben/config/bin
+    /home/ben/config
+    /home/ben/.pyenv/bin
     /home/ben/.cargo/bin
     $path
 )
