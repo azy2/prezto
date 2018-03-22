@@ -11,7 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-alias make="make -j9"
+alias make="make -j4"
 
 alias off="sudo shutdown -h now"
 alias restart="sudo reboot"
@@ -23,7 +23,7 @@ function e {
 
 alias en="emacsclient"
 
-export EDITOR="emacsclient"
+export EDITOR="emacs"
 
 # alias ls="ls -h "
 
@@ -42,7 +42,17 @@ if [ -n "$INSIDE_EMACS" ]; then
     print -P "\033AnSiTc %d"
 fi
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
-clear
+function venv() {
+  nix-shell ./shell.nix --run "RUN=shell.zsh zsh"
+}
+
+alias ovs="cd ~/school/softeng/Overseer && venv"
+
+# clear
+
+if [[ -n $RUN ]] then
+   . ./$RUN
+fi
