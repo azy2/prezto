@@ -21,7 +21,7 @@ function e {
     disown
 }
 
-alias en="emacsclient"
+alias en="emacs -nw"
 
 export EDITOR="emacs"
 
@@ -46,13 +46,10 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 function venv() {
-  nix-shell ./shell.nix --run "RUN=shell.zsh zsh"
+  nix-shell --command zsh
 }
 
 alias ovs="cd ~/school/softeng/Overseer && venv"
+alias android_fun="cd ~/projects/android_fun && venv"
 
 # clear
-
-if [[ -n $RUN ]] then
-   . ./$RUN
-fi

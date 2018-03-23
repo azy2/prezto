@@ -56,6 +56,8 @@ export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib
 
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
+export SHELL=zsh
+
 #
 # Less
 #
