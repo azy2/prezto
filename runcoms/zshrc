@@ -46,7 +46,13 @@ function venv() {
   nix-shell --command zsh
 }
 
-alias ovs="cd ~/school/softeng/Overseer && venv"
-alias android_fun="cd ~/projects/android_fun && venv"
+function pyenv_init() {
+  export PATH="$HOME/.pyenv/bin/:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+}
+
+alias ovs="cd ~/school/softeng/Overseer && venv && sudo service mysql stop"
+alias banal="cd ~/school/project && venv"
 
 # clear
