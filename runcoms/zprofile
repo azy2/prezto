@@ -49,9 +49,7 @@ path=(
     $path
 )
 
-. /home/ben/.nix-profile/etc/profile.d/nix.sh
-
-export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
+export RUST_SRC_PATH="/home/ben/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
 export RANGER_LOAD_DEFAULT_RC=FALSE
 

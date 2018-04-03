@@ -43,7 +43,9 @@ if [ -n "$INSIDE_EMACS" ]; then
 fi
 
 function venv() {
-  nix-shell --command zsh
+  pushd $1
+  RUN=./shell.sh zsh
+  popd
 }
 
 function pyenv_init() {
@@ -52,7 +54,11 @@ function pyenv_init() {
   eval "$(pyenv virtualenv-init -)"
 }
 
-alias ovs="cd ~/school/softeng/Overseer && venv && sudo service mysql stop"
-alias banal="cd ~/school/project && venv"
+alias ovs="venv ~/school/softeng/Overseer && sudo service mysql stop"
+alias banal="venv ~/school/project"
+
+if [[ -n $RUN ]] then
+   . $RUN
+fi
 
 # clear
